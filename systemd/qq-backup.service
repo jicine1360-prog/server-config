@@ -1,0 +1,6 @@
+[Unit]
+Description=qqwon daily code backup (to /data/backups)
+
+[Service]
+Type=oneshot
+ExecStart=/home/hoony/qqwon/backup_qqwon.sh

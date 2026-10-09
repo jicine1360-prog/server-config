@@ -1,0 +1,13 @@
+[Unit]
+Description=hunmin-64k llama.cpp server (사무장/오팀장 전용, 8087)
+After=network.target
+
+[Service]
+Type=forking
+ExecStart=/bin/bash -c 'NGL=99 /home/hoony/hunmin-server.sh start && sleep 2'
+ExecStop=/home/hoony/hunmin-server.sh stop
+RemainAfterExit=yes
+Restart=no
+
+[Install]
+WantedBy=default.target

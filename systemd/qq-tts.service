@@ -1,0 +1,17 @@
+[Unit]
+Description=qqwon MissingYou Local TTS (Qwen3-TTS Apache-2.0, :5002)
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/hoony/qqwon/tts_venv/bin/python /home/hoony/qqwon/tts_venv/tts_server.py
+Restart=on-failure
+RestartSec=5
+Environment=TTS_MODEL=Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice
+Environment=TTS_DEVICE=cuda:2
+Environment=TTS_PORT=5002
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=default.target
