@@ -1,0 +1,13 @@
+[Unit]
+Description=qwen3.6-35b MoE llama.cpp server (상주 메인, 8087)
+After=network.target
+
+[Service]
+Type=forking
+ExecStart=/bin/bash -c 'NGL=99 /home/hoony/qwen36-server.sh start && sleep 2'
+ExecStop=/home/hoony/qwen36-server.sh stop
+RemainAfterExit=yes
+Restart=no
+
+[Install]
+WantedBy=default.target
